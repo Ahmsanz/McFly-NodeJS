@@ -14,7 +14,7 @@ router
  * @apiSuccess (200) User created
  * @apiFailure (400) Some parameter is missing
  */
-    .post('/users/register', controller.register)
+    .post('/register', controller.register)
 
     /**
  * @api {POST} /users/login
@@ -25,7 +25,7 @@ router
  * @apiSuccess (200) User access granted
  * @apiFailure (404) User does not exist; (400) Password does not match.
  */
-    .post('/users/login', controller.login)
+    .post('/login', controller.login)
 
 
 module.exports = router; 
