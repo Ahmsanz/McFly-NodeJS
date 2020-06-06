@@ -1,10 +1,11 @@
+const { v4: uuidv4 } = require('uuid');
 class Note {
     constructor (
         userId,
         content,
         favBy
     )  {
-        let noteId = 'someId';
+        this.noteId = uuidv4();
         this.userId = userId; 
         this.content = content;
         this.favBy = favBy;
