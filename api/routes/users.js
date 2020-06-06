@@ -27,5 +27,17 @@ router
  */
     .post('/login', controller.login)
 
+    /**
+ * @api {PUT} /users/user/:userId/fav
+ * @apiDescription adds a given note Id to the user's favourites notes array
+ * @apiVersion 1.0.0
+ * @apiGroup users
+ * @apiParams userId
+ * @apiReqBody noteId
+ * @apiSuccess (200) note added as favourite; retrieves user with note added.
+ * @apiFailure (400) note not added as favourite
+ */
+    .put('/user/:userId/fav', controller.fav)
+
 
 module.exports = router; 

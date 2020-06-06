@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid');
 class User {
     constructor(
         first_name,
@@ -6,12 +7,12 @@ class User {
         password,
         favNotes
     ) {
-        let userId = 'some userId';
+        this.userId = uuidv4();
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email; 
         this.password = password;
-        this.favNotes = favNotes;
+        this.favNotes = favNotes || [];
     }
 }
 

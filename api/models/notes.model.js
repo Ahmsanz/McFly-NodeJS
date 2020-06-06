@@ -6,7 +6,7 @@ class Note {
         favBy
     )  {
         this.noteId = uuidv4();
-        this.userId = userId; 
+        this.userId = userId || uuidv4(); 
         this.content = content;
         this.favBy = favBy;
     }
