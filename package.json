@@ -1,0 +1,20 @@
+{
+  "name": "mcfly",
+  "version": "1.0.0",
+  "description": "Small API test for Kubide technical interview",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "nodejs",
+    "api",
+    "crud",
+    "jest"
+  ],
+  "author": "Ahmsanz",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
