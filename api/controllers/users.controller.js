@@ -1,6 +1,7 @@
 const User = require('../models/users.model')
 
 const users = [];
+const notes = require('./notes.controller');
 
 /**
  * Register user 
@@ -52,7 +53,7 @@ exports.fav = (req, res) => {
     const { noteId } = req.body; 
     const { userId } = req.params; 
 
-    updateUser = users.find( user => user.userId === userId);
+    const updateUser = users.find( user => user.userId === userId);
     updateUser.favNotes = [...updateUser.favNotes, noteId]; 
 
     console.log(updateUser);
@@ -67,6 +68,24 @@ exports.rmFav = ( req, res ) => {
     const { noteId } = req.body;
     const { userId } = req.params;
 
-    updateUser = users.find( user => userId === userId);
+    const updateUser = users.find( user => userId === userId);
     updateUser.favNotes.filter( fav => fav !== noteId); 
+}
+
+/**
+ * Retrieve all favourite notes
+ * @public
+ */
+exports.getFavs = (req, res) => {
+    const { userId } = req.params;
+
+    const requestedUser = users.find( user => userId === userId);
+    const userFavNotes = notes.filter( note => requestedUser.favNotes.includes(note.noteId));
+
+    if (userFavNotes) {
+        res.status(200).send(userFavNotes);
+    } else {
+        res.status(404).json({msg: 'The user has no favourite notes yet'});
+    }
+    
 }

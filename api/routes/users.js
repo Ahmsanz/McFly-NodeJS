@@ -52,5 +52,16 @@ router
 
    .put('/user/:userId/rmfav', controller.rmFav)
 
+   /**
+ * @api {GET} /users/:userId/favs
+ * @apiDescription retrieves the notes marked as favourite by a certain user
+ * @apiVersion 1.0.0
+ * @apiGroup users
+ * @apiParams userId
+ * @apiSuccess (200) retrieves an array of notes
+ * @apiFailure (404) no favourite notes found
+ */
+   .get('/:userId/favs', controller.getFavs)
+
 
 module.exports = router; 

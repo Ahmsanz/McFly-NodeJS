@@ -49,3 +49,5 @@ exports.getSingleNote = (req, res) => {
     console.log(requestedNote);
     res.status(200).send(requestedNote);
 }
+
+module.exports = notes;
