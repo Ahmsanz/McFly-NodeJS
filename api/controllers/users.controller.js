@@ -52,9 +52,21 @@ exports.fav = (req, res) => {
     const { noteId } = req.body; 
     const { userId } = req.params; 
 
-    updateUser = users.find( user => user.userId === userId)
+    updateUser = users.find( user => user.userId === userId);
     updateUser.favNotes = [...updateUser.favNotes, noteId]; 
 
     console.log(updateUser);
     res.status(201).send(updateUser);
+}
+
+/**
+ * Remove note from favs array
+ * @public
+ */
+exports.rmFav = ( req, res ) => {
+    const { noteId } = req.body;
+    const { userId } = req.params;
+
+    updateUser = users.find( user => userId === userId);
+    updateUser.favNotes.filter( fav => fav !== noteId); 
 }

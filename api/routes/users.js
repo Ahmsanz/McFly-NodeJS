@@ -39,5 +39,18 @@ router
  */
     .put('/user/:userId/fav', controller.fav)
 
+    /**
+ * @api {PUT} /users/user/:userId/rmfav
+ * @apiDescription removes one specific note ID from the favourites notes array
+ * @apiVersion 1.0.0
+ * @apiGroup users
+ * @apiParams userId
+ * @apiReqBody noteId
+ * @apiSuccess (200) note removed as favourite
+ * @apiFailure (400) won't remove the note ID
+ */
+
+   .put('/user/:userId/rmfav', controller.rmFav)
+
 
 module.exports = router; 
