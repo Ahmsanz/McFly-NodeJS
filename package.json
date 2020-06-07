@@ -4,7 +4,8 @@
   "description": "Small API test for Kubide technical interview",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "mocha --timeout 10000",
+    "local": "nodemon app.js"
   },
   "keywords": [
     "nodejs",
@@ -15,7 +16,9 @@
   "author": "Ahmsanz",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.0.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.2.0",
     "uuid": "^8.1.0"
   },
   "dependencies": {

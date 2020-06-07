@@ -23,3 +23,10 @@ app.listen(port, () => console.log(`server running at port ${port}`));
 
 app.use('/users', require('./api/routes/users'));
 app.use('/notes', require('./api/routes/notes'));
+
+app.get('/', (req, res) => {
+  console.log('Welcome, you are accessing the API')
+  res.status(200).json({msg: 'Welcome, you are accessing the API'})
+} )
+
+module.exports = app;
