@@ -26,7 +26,7 @@ app.use('/notes', require('./api/routes/notes'));
 
 app.get('/', (req, res) => {
   console.log('Welcome, you are accessing the API')
-  res.status(200).json({msg: 'Welcome, you are accessing the API'})
+  res.status(200).send('Welcome, you are accessing the API')
 } )
 
 module.exports = app;

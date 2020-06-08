@@ -5,14 +5,14 @@ class User {
         last_name,
         email, 
         password,
-        favNotes
+        fav_notes
     ) {
         this.userId = uuidv4();
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email; 
         this.password = password;
-        this.favNotes = favNotes || [];
+        this.fav_notes = fav_notes || [];
     }
 }
 

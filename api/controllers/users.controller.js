@@ -1,7 +1,7 @@
 const User = require('../models/users.model')
 
 const users = [];
-const notes = require('./notes.controller');
+const notes = [];
 
 /**
  * Register user 
